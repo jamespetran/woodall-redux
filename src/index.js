@@ -19,6 +19,9 @@ const count = (state = 5 , action) => {
   if (action.type=== 'INCREASE_COUNT') {
     return state+1;
   }
+  if (action.type=== 'DECREASE_COUNT') {
+    return state-1;
+  }
   
   return state;
 }

@@ -22,11 +22,22 @@ function App() {
       type: 'INCREASE_COUNT'
     })
   };
-
+  const onDecrease = () => {
+    // make an announcement:
+    // "The count shall be increased!"
+    // this will call the reducer function
+    dispatch({
+      // The type indicates our intention
+      // it can be any type of string you want
+      // UPPER_SNAKE_CASE means its important, or its a thing you want to happen
+      type: 'DECREASE_COUNT'
+    })
+  };
   return (
     <div className="App">
       <h3>count is {count}</h3>
-      <button onClick={onIncrease}>+</button>
+      <button onClick={onIncrease}>⬆️</button>
+      <button onClick={onDecrease}>⬇️</button>
     </div>
   );
 }
