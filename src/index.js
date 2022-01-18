@@ -12,10 +12,15 @@ import { Provider } from 'react-redux'
 // this will be a click counter
 // this replaces
 //    const [count, setCount] = useState(5)
-const count = () => {
+const count = (state = 5 , action) => {
+  console.log(state, action)
   // whatever we return from the reducer:
   // is the value of that state (in this case, count)
-  return 5;
+  if (action.type=== 'INCREASE_COUNT') {
+    return state+1;
+  }
+  
+  return state;
 }
 
 // create global redux store
