@@ -1,23 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+//to get the store into app.js
+import { useSelector } from 'react-redux';
 
 function App() {
+  // use selector is a hook that gives us
+  // access to the redux store
+  const count = useSelector(store => store.count);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3>count is {count}</h3>
     </div>
   );
 }
